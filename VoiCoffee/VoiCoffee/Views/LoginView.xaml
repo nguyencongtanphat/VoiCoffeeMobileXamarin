@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoiCoffee.Views.LoginView"
+             xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
+             Visual="Material">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Padding="20"
+              VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0"
+                         VerticalOptions="Center">
+                <Image Source="https://img.freepik.com/premium-vector/good-food-logo-design_79169-10.jpg?w=2000"
+                       WidthRequest="100"
+                       HeightRequest="300"></Image>
+                <Label Text="Login Form"
+                       FontFamily="CabinSketch"
+                       TextColor="Purple"
+                       FontSize="40"
+                       HorizontalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                         Spacing="10">
+                <Entry Placeholder="Enter user name"
+                       Text="{Binding Username}"></Entry>
+                <Entry Placeholder="Enter user password"
+                       Text="{Binding Password}"
+                       IsPassword="True"></Entry>
+                <Button Text="Login"
+                        Command='{Binding LoginCommand}'
+                        HorizontalOptions="Center"
+                        BackgroundColor="Purple"
+                        TextColor="White"
+                        WidthRequest="200"
+                        HeightRequest="60"
+                        CornerRadius="20"></Button>
+                <Label Text="New Users:"></Label>
+                <Button Text="Register"
+                        Command="{Binding RegisterCommand}"
+                        HorizontalOptions="Center"
+                        BackgroundColor="DarkOrange"
+                        TextColor="White"
+                        WidthRequest="200"
+                        HeightRequest="60"
+                        CornerRadius="20"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
