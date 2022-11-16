@@ -23,5 +23,14 @@ namespace VoiCoffee.Views
             var afd = new AddFoodItemData();
             await afd.AddFoodItemsAsync();
         }
+
+        void ButtonCart_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var cct = new CreatCartTable();
+            if (cct.CreateTable())
+                DisplayAlert("Success", "Cart Table Created", "OK");
+            else
+                DisplayAlert("Error", "Error while creating table", "OK");
+        }
     }
 }

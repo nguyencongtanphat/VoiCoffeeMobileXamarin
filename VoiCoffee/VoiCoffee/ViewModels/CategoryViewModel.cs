@@ -29,6 +29,7 @@ namespace VoiCoffee.ViewModels
             set
             {
                 _TotalFoodItems = value;
+                OnPropertyChanged();
             }
             get
             {
@@ -52,7 +53,7 @@ namespace VoiCoffee.ViewModels
                 FoodItemsByCategory.Add(item);
                 
             }
-            _TotalFoodItems = FoodItemsByCategory.Count;
+            TotalFoodItems = FoodItemsByCategory.Count;
         }
     }
 }

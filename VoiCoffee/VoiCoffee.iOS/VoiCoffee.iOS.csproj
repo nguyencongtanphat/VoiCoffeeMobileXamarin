@@ -68,6 +68,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -134,11 +135,14 @@
     <PackageReference Include="Xamarin.Forms.Visual.Material">
       <Version>5.0.0.2515</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.8.116</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\VoiCoffee\VoiCoffee.csproj">
-      <Project>{EC8290E1-F9FA-4604-B970-9D2DA44E9FD8}</Project>
+      <Project>{AC6AF274-31C5-4D48-8420-B38426CC424C}</Project>
       <Name>VoiCoffee</Name>
     </ProjectReference>
   </ItemGroup>

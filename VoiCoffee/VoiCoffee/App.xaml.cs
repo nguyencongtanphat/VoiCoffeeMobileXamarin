@@ -25,6 +25,8 @@ namespace VoiCoffee
             {
                 MainPage = new ProductsView();
             }
+
+
         }
 
         protected override void OnStart()

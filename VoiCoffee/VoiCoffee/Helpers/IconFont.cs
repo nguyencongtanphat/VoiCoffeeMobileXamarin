@@ -7,5 +7,6 @@ namespace VoiCoffee.Helpers
         public const string ViewList = "\U000f0001";
         public const string Logout = "\U000f0001";
         public const string SearchWeb = "\U000f0001";
+        public const string ArrowLeft = "\U000f0001";
     }
 }

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:helpers="clr-namespace:DemoApp.Helpers"
-             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PanncakeView"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:pancake1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="VoiCoffee.Views.CategoryView">
     <ContentPage.Content>
@@ -42,7 +42,7 @@
                     <!--tổng số sản phẩm-->
                     <Label Grid.Row="0"
                            Grid.Column="0"
-                           Text="{Binding TotalFoodItems}"
+                           Text="{Binding TotalFoodItems, StringFormat='{0} Total Items'}"
                            FontAttributes="Bold" FontSize="18"></Label>
                     
                     <!--ảnh chi tiết-->
