@@ -7,9 +7,14 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              ios:Page.UseSafeArea="True">
+    <ContentPage.BindingContext>
+        <vm:ProductsViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid Margin="20,0,0,0">
+            <!--định nghĩa dòng, cột-->
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -18,6 +23,8 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <!--header-->
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -28,7 +35,6 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
                 <Label Text="Welcome" Grid.Row="0" Grid.Column="0" TextColor="Silver"/>
 
@@ -51,22 +57,23 @@
 
             </Grid>
 
+            <!--nội dung-->
             <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <!--thanh search-->
                 <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
                 <ImageButton Grid.Column="1" Source="{FontImage FontFamily=FontAwesome,
                         Glyph={x:Static helpers:IconFont.SearchWeb}, Size=40, Color=Black}" Margin="0,0,10,0" HorizontalOptions="End"/>
             </Grid>
-
+            <!--danh mục sp-->
             <CollectionView ItemsSource="{Binding Categories}"
                             Margin="0,20" 
                             HeightRequest="125"
                             VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" ItemsLayout="HorizontalList" SelectionChanged="CollectionView_SelectionChanged"
                             SelectionMode="Single" Grid.Row="2">
-
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="0,0,15,0">
@@ -79,9 +86,10 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Label Grid.Row="3" Text="Lastest Items" FontSize="25" FontAttributes="Bold"/>
+            <!--latest items-->
+            <Label Grid.Row="3" Text="Latest Items" FontSize="25" FontAttributes="Bold"/>
 
-            <CollectionView ItemsSource="{Binding LastestItems}" Margin="0,20,10,0" VerticalOptions="Start"
+            <CollectionView ItemsSource="{Binding LatestItems}" Margin="0,20,10,0" VerticalOptions="Start"
                             VerticalScrollBarVisibility="Never" Grid.Row="4">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

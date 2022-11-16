@@ -48,13 +48,13 @@ namespace VoiCoffee.Services
 
         public async Task<ObservableCollection<FoodItem>> GetLatestFoodItemsAsync()
         {
-            var lastestFoodItems = new ObservableCollection<FoodItem>();
+            var latestFoodItems = new ObservableCollection<FoodItem>();
             var items = (await GetFoodItemsAsync()).OrderByDescending(f => f.ProductID).Take(3);
             foreach (var item in items)
             {
-                lastestFoodItems.Add(item);
+                latestFoodItems.Add(item);
             }
-            return lastestFoodItems;
+            return latestFoodItems;
         }
     }
 }

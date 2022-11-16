@@ -22,7 +22,7 @@ namespace VoiCoffee.Helpers
                 {
                     ProductID=1,
                     CategoryID=1,
-                    ImageUrl="MainBurger",
+                    ImageUrl="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg",
                     Name="Burger and Pizza hub 1",
                     Description="Burger - Pizza - Breakfast",
                     Rating="4.8",
@@ -34,7 +34,7 @@ namespace VoiCoffee.Helpers
                 {
                     ProductID=2,
                     CategoryID=2,
-                    ImageUrl="MainPizza",
+                    ImageUrl="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg",
                     Name="Pizza",
                     Description=" Pizza - Breakfast",
                     Rating="4.3",
@@ -46,7 +46,7 @@ namespace VoiCoffee.Helpers
                 {
                     ProductID=3,
                     CategoryID=3,
-                    ImageUrl="MainDessert",
+                    ImageUrl="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg",
                     Name="Ice Creams",
                     Description=" Ice Creams - Breakfast",
                     Rating="4.3",
@@ -58,7 +58,7 @@ namespace VoiCoffee.Helpers
                 {
                     ProductID=4,
                     CategoryID=4,
-                    ImageUrl="MainDessert",
+                    ImageUrl="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg",
                     Name="Cake",
                     Description=" Cake - Breakfast",
                     Rating="4.3",

@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using VoiCoffee.Model;
 using VoiCoffee.Services;
+using VoiCoffee.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -50,7 +51,7 @@ namespace VoiCoffee.ViewModels
             if (String.IsNullOrEmpty(uname))
                 UserName = "Guest";
             else
-                UserName = "uname";
+                UserName = uname;
 
             UserCartItemsCount = new CartItemService().GetUserCartCount();
 
@@ -64,14 +65,14 @@ namespace VoiCoffee.ViewModels
             GetLatestItems();
         }
 
-        private Task ViewCartAsync()
+        private async Task ViewCartAsync()
         {
-            throw new NotImplementedException();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CartView());
         }
 
-        private Task LogoutAsync()
+        private async Task LogoutAsync()
         {
-            throw new NotImplementedException();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new LogoutView());
         }
 
         private async void GetCategories()

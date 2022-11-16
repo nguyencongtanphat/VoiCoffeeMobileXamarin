@@ -16,5 +16,9 @@ namespace VoiCoffee.Views
         {
             InitializeComponent();
         }
+
+        void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        {
+        }
     }
 }
