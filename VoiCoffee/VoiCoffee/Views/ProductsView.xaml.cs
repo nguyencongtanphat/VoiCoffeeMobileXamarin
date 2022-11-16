@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Linq;
+using VoiCoffee.Model;
 
 namespace VoiCoffee.Views
 {
@@ -17,8 +19,14 @@ namespace VoiCoffee.Views
             InitializeComponent();
         }
 
-        void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
+            var category = e.CurrentSelection.FirstOrDefault() as Category;
+            if (category == null)
+                return;
+            await Navigation.PushModalAsync(new CategoryView(category));
+
+            ((CollectionView)sender).SelectedItem = null;
         }
     }
 }
