@@ -61,12 +61,12 @@ namespace VoiCoffee.ViewModels
 
         private async Task ViewCartAsync()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CartView());
         }
 
         private async Task GotoHomeAsync()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new CartView());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
         }
 
         private void AddToCart()
@@ -79,7 +79,7 @@ namespace VoiCoffee.ViewModels
                     ProductId = SelectedFoodItem.ProductID,
                     ProductName = SelectedFoodItem.Name,
                     Price = SelectedFoodItem.Price,
-                    Quantity = TotalQuantity
+                    Quantify = TotalQuantity
                 };
                 var item = cn.Table<CartItem>().ToList().FirstOrDefault(c => c.ProductId == SelectedFoodItem.ProductID);
                 if (item == null)
@@ -88,7 +88,7 @@ namespace VoiCoffee.ViewModels
                 }
                 else
                 {
-                    item.Quantity += TotalQuantity;
+                    item.Quantify += TotalQuantity;
                     cn.Update(item);
                 }
                 cn.Commit();

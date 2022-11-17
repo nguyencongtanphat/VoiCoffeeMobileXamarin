@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using VoiCoffee.Model;
+using VoiCoffee.Services;
 using VoiCoffee.Views;
 using Xamarin.Forms;
 
@@ -13,8 +14,8 @@ namespace VoiCoffee.ViewModels
     {
         public ObservableCollection<UserCartItem> CartItems { get; set; }
 
-        private int _TotalCost;
-        public int TotalCost
+        private decimal _TotalCost;
+        public decimal TotalCost
         {
             get
             {
@@ -38,7 +39,16 @@ namespace VoiCoffee.ViewModels
         private async Task PlaceOrderAsync()
         {
             //code to place order
-            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersView());
+            var id = await new OrderService().PlaceOrderAsync() as string;
+            RemoveItemsFromCart();
+
+            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersView(id));
+        }
+
+        private void RemoveItemsFromCart()
+        {
+            var cis = new CartItemService();
+            cis.RemoveItemsFromCart();
         }
 
         private void LoadItems()
@@ -54,11 +64,11 @@ namespace VoiCoffee.ViewModels
                     ProductId = item.ProductId,
                     ProductName = item.ProductName,
                     Price = item.Price,
-                    Quantity = item.Quantity,
-                    Cost = item.Price * item.Quantity
+                    Quantity = item.Quantify,
+                    Cost = item.Price * item.Quantify
 
                 });
-                TotalCost += (item.Price * item.Quantity);
+                TotalCost += (item.Price * item.Quantify);
                     
             }
         }

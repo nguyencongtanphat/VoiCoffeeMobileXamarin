@@ -4,12 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:helper="clr-namespace:DemoApp.Helpers"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
     Visual="Material"
     BackgroundColor="LimeGreen"
     x:Class="VoiCoffee.Views.CartView">
-
     <ContentPage.BindingContext>
         <vm:CartViewModel />
     </ContentPage.BindingContext>
@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
             <BoxView Grid.Row="0"></BoxView>
 
-            <Label Text="Burger Queen" FontSize="40" TextColor="WhiteSmoke" FontFamily="CabinSketch" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <Label Text="Voi Coffee" FontSize="40" TextColor="WhiteSmoke" FontFamily="CabinSketch" HorizontalOptions="Center" VerticalOptions="Center"></Label>
 
             <Label x:Name="LabelName"
                    FontSize="Subtitle"
