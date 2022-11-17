@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace VoiCoffee.Views
@@ -10,6 +10,12 @@ namespace VoiCoffee.Views
         public CartView()
         {
             InitializeComponent();
+            LabelName.Text = "Welcome " + Preferences.Get("Username", "Guest") + ",";
+        }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

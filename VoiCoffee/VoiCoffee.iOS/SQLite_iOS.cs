@@ -4,7 +4,7 @@ using SQLite;
 using VoiCoffee.Model;
 using Xamarin.Forms;
 
-[assembly:Dependency(typeof(VoiCoffee.iOS.SQLite_iOS))]
+[assembly: Dependency(typeof(VoiCoffee.iOS.SQLite_iOS))]
 namespace VoiCoffee.iOS
 {
     public class SQLite_iOS : ISQLite
