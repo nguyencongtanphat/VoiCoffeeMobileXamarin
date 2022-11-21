@@ -25,6 +25,7 @@ namespace VoiCoffee.ViewModels
             }
         }
 
+
         private int _UserCartItemsCount;
         public int UserCartItemsCount
         {
@@ -36,6 +37,20 @@ namespace VoiCoffee.ViewModels
             get
             {
                 return _UserCartItemsCount;
+            }
+        }
+
+        private string _FullName;
+        public string FullName
+        {
+            set
+            {
+                _FullName = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _FullName;
             }
         }
 

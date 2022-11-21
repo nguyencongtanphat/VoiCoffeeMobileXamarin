@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VoiCoffee.Model;
 using Firebase.Database.Query;
+using Xamarin.Forms;
 
 namespace VoiCoffee.Services
 {
@@ -25,8 +26,9 @@ namespace VoiCoffee.Services
             return (user != null);
         }
 
-        public async Task<bool> RegisterUser(string uname, string passwd)
+        public async Task<int> RegisterUser(string uname, string passwd)
         {
+            if (uname==null || passwd==null) return 2;
             if (await IsUserExists(uname) == false)
             {
                 await client.Child("Users")
@@ -35,9 +37,9 @@ namespace VoiCoffee.Services
                         Username = uname,
                         Password = passwd
                     });
-                return true;
+                return 0;
             }
-            return false;
+            return 1;
         }
 
         public async Task<bool> LoginUser(string uname, string passwd)

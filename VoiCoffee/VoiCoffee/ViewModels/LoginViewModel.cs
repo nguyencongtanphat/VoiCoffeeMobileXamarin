@@ -25,6 +25,20 @@ namespace VoiCoffee.ViewModels
             }
         }
 
+        private string _Fullname;
+        public string Fullname
+        {
+            set
+            {
+                this._Fullname = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return this._Fullname;
+            }
+        }
+
         private string _Password;
         public string Password
         {
@@ -53,8 +67,8 @@ namespace VoiCoffee.ViewModels
             }
         }
 
-        private bool _Result;
-        public bool Result
+        private int _Result;
+        public int Result
         {
             set
             {
@@ -64,6 +78,20 @@ namespace VoiCoffee.ViewModels
             get
             {
                 return this._Result;
+            }
+        }
+
+        private bool _Result1;
+        public bool Result1
+        {
+            set
+            {
+                this._Result1 = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return this._Result1;
             }
         }
 
@@ -84,12 +112,14 @@ namespace VoiCoffee.ViewModels
                 IsBusy = true;
                 var userService = new UserService();
                 Result = await userService.RegisterUser(Username, Password);
-                if (Result)
+                if (Result == 0)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Success", "User Registered", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Thành Công", "Bạn Đã Đăng Ký Thành Công!", "OK");
                 }
-                else
-                    await Application.Current.MainPage.DisplayAlert("Error", "User already exists with credentials", "OK");
+                else if (Result ==1)
+                    await Application.Current.MainPage.DisplayAlert("Lỗi", "Tài Khoản Này Đã Tồn Tại!", "OK");
+                else if (Result == 2)
+                    await Application.Current.MainPage.DisplayAlert("Lỗi", "Vui Lòng Nhập Đầy Đủ Thông Tin!", "OK");
 
             }
             catch (Exception ex)
@@ -110,14 +140,14 @@ namespace VoiCoffee.ViewModels
             {
                 IsBusy = true;
                 var userService = new UserService();
-                Result = await userService.LoginUser(Username, Password);
-                if (Result)
+                Result1 = await userService.LoginUser(Username, Password);
+                if (Result1)
                 {
                     Preferences.Set("Username", Username);
                     await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
                 }
                 else
-                    await Application.Current.MainPage.DisplayAlert("Error", "Invalid Username or Password", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Lỗi", "Tài Khoản hoặc Mật Khẩu Chưa Đúng!", "OK");
             }
             catch (Exception ex)
             {

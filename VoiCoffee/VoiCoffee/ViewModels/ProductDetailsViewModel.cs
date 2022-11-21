@@ -30,7 +30,7 @@ namespace VoiCoffee.ViewModels
             set
             {
                 this._TotalQuantity = value;
-                if (this._TotalQuantity < 0) this._TotalQuantity = 0;
+                if (this._TotalQuantity < 1) this._TotalQuantity = 1;
                 if (this._TotalQuantity > 10) this._TotalQuantity -= 1;
                 OnPropertyChanged();
             }
@@ -50,7 +50,7 @@ namespace VoiCoffee.ViewModels
         public ProductDetailsViewModel(FoodItem foodItem)
         {
             SelectedFoodItem = foodItem;
-            TotalQuantity = 0;
+            TotalQuantity = 1;
 
             IncrementOrderCommand = new Command(() => IncrementOrder());
             DecrementOrderCommand = new Command(() => DecrementOrder());
@@ -93,12 +93,12 @@ namespace VoiCoffee.ViewModels
                 }
                 cn.Commit();
                 cn.Close();
-                Application.Current.MainPage.DisplayAlert("Cart", "Selected Item Added To Cart","OK");
+                Application.Current.MainPage.DisplayAlert("Giỏ hàng", "Sản Phẩm Đã Được Thêm Vào Giỏ Hàng","OK");
             }
 
             catch (Exception ex)
             {
-                Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+                Application.Current.MainPage.DisplayAlert("Lỗi", ex.Message, "OK");
             }
 
             finally

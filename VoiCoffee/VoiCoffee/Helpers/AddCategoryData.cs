@@ -24,44 +24,44 @@ namespace VoiCoffee.Helpers
                 new Category()
                 {
                     CategoryID=1,
-                    CategoryName="Burger",
-                    CategoryPoster="MainBurger",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Cà phê",
+                    CategoryPoster="CaPhe",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/latte_851143_96ca362661644db5a1bb6563d1dfbe11.jpg"
                 },
                 new Category()
                 {
                     CategoryID=2,
-                    CategoryName="Pizza",
-                    CategoryPoster="MainPizza",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Trà trái cây",
+                    CategoryPoster="TraTraiCay",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/1668574338_tra-dao-cam-sa_28487052296d4f85ab197868399ddde8.png"
                 },
                 new Category()
                 {
                     CategoryID=3,
-                    CategoryName="Desserts",
-                    CategoryPoster="MainDesserts",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Trà sữa",
+                    CategoryPoster="TraSua",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/hong-tra-latte_618293_12b6838bc4f349408d4f938a303d285c.jpg"
                 },
                 new Category()
                 {
                     CategoryID=4,
-                    CategoryName=" Veg Burger",
-                    CategoryPoster="MainBurger",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Chocolate",
+                    CategoryPoster="Chocolate",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/chocolatenong_949029_5eeb0c6d39a34903b8f2579b85b78524.jpg"
                 },
                 new Category()
                 {
                     CategoryID=5,
-                    CategoryName="Veg Pizza",
-                    CategoryPoster="MainPizza",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Đóng chai",
+                    CategoryPoster="DongChai",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/bottle_tradao_836487_ac6ab5fb3aa0417088ef724bec26f9c4.jpg"
                 },
                 new Category()
                 {
                     CategoryID=6,
-                    CategoryName="Cakes",
-                    CategoryPoster="MainDesserts",
-                    ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/800px-Hamburger_%28black_bg%29.jpg"
+                    CategoryName="Bánh ngọt",
+                    CategoryPoster="BanhNgot",
+                    ImageUrl="https://product.hstatic.net/1000075078/product/1655348113_mochi-traxanh_aa9f4be54ef444f08d6428427ed2e938.jpg"
                 },
             };
 

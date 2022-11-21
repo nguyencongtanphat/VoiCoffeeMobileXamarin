@@ -12,9 +12,9 @@ namespace VoiCoffee
         {
             InitializeComponent();
 
-            //MainPage = new MainPage();
-            //MainPage = new LoginView();
-            //MainPage = new NavigationPage(new SettingsPage());
+            MainPage = new MainPage();
+            MainPage = new LoginView();
+            MainPage = new NavigationPage(new SettingsPage());
 
             string uname = Preferences.Get("Username", String.Empty);
             if (String.IsNullOrEmpty(uname))
@@ -26,6 +26,7 @@ namespace VoiCoffee
                 MainPage = new ProductsView();
             }
 
+            //MainPage = new MapPage();
 
         }
 
