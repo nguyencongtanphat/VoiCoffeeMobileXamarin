@@ -8,7 +8,7 @@
     ios:Page.UseSafeArea="True"
     xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
     Visual="Material"
-    BackgroundColor="LimeGreen"
+    BackgroundColor="#026D4D"
     x:Class="VoiCoffee.Views.CartView">
     <ContentPage.BindingContext>
         <vm:CartViewModel />
@@ -24,20 +24,14 @@
             </Grid.RowDefinitions>
             <BoxView Grid.Row="0"></BoxView>
 
-            <Label Text="Voi Coffee" FontSize="40" TextColor="WhiteSmoke" FontFamily="CabinSketch" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
 
-            <Label x:Name="LabelName"
-                   FontSize="Subtitle"
-                   TextColor="WhiteSmoke"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"></Label>
-            <ImageButton Source="https://upload.wikimedia.org/wikipedia/commons/5/5a/Perspective-Button-Stop-icon.png"
-                         Grid.Row="0"
-                         HorizontalOptions="Start"
-                         Aspect="AspectFit"
-                         VerticalOptions="Start"
-                         Margin="10, 30"
-                         Clicked="ImageButton_Clicked" />
+            <Label Text="The Lagom Coffee" FontSize="24" TextColor="WhiteSmoke" FontFamily="CabinSketch" FontAttributes="Bold"
+                   HorizontalOptions="Center" VerticalOptions="Start" Margin="0,30,0,0"/>
+
+            <Label x:Name="LabelName" FontSize="15" Margin="0,0,0,5" TextColor="WhiteSmoke"
+                   HorizontalOptions="Center" VerticalOptions="End"/>
 
             <pancake:PancakeView Grid.Row="1" BackgroundColor="WhiteSmoke" CornerRadius="60, 60, 0, 0">
                 <ListView x:Name="ListViewCartItems"
@@ -50,33 +44,37 @@
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="Id"
+                                <Label Text="Mã"
                                        Grid.Column="0"
-                                       FontSize="Subtitle"
-                                       TextColor="Green"></Label>
-                                <Label Text="Name"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Tên"
                                        Grid.Column="1"
-                                       FontSize="Subtitle"
-                                       TextColor="Green"></Label>
-                                <Label Text="Price"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Giá"
                                        Grid.Column="2"
-                                       FontSize="Subtitle"
-                                       TextColor="Green"></Label>
-                                <Label Text="Qty"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Số lượng"
                                        Grid.Column="3"
-                                       FontSize="Subtitle"
-                                       TextColor="Green"></Label>
-                                <Label Text="Cost"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Thành tiền"
                                        Grid.Column="4"
-                                       FontSize="Subtitle"
-                                       TextColor="Green"></Label>
-
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
                             </Grid>
                         </DataTemplate>
                     </ListView.HeaderTemplate>
@@ -88,32 +86,36 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="3*"></ColumnDefinition>
                                             <ColumnDefinition Width="2*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
                                         <Label Text="{Binding ProductId}"
                                                Grid.Column="0"
-                                               FontSize="Body"
-                                               TextColor="Green"></Label>
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
                                         <Label Text="{Binding ProductName}"
                                                Grid.Column="1"
-                                               FontSize="Body"
-                                               TextColor="Green"></Label>
+                                               FontSize="14"
+                                               TextColor="#808080"></Label>
                                         <Label Text="{Binding Price}"
                                                Grid.Column="2"
-                                               FontSize="Body"
-                                               TextColor="Green"></Label>
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
                                         <Label Text="{Binding Quantity}"
                                                Grid.Column="3"
-                                               FontSize="Body"
-                                               TextColor="Green"></Label>
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
                                         <Label Text="{Binding Cost}"
                                                Grid.Column="4"
-                                               FontSize="Body"
-                                               TextColor="Green"></Label>
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
                                     </Grid>
                                 </ViewCell.View>
                             </ViewCell>
@@ -122,20 +124,21 @@
                 </ListView>
             </pancake:PancakeView>
 
-            <Label Text="{Binding TotalCost, StringFormat='Total Cost : {0:c}'}"
+            <Label Text="{Binding TotalCost, StringFormat='Tổng tiền: {0:c}'}"
                    Grid.Row="2"
                    HorizontalTextAlignment="End"
-                   FontSize="Title"
-                   TextColor="WhiteSmoke" />
+                   FontSize="20" FontAttributes="Bold"
+                   TextColor="WhiteSmoke"
+                   Margin="0,15,15,15"/>
 
-            <Button Text="Place Order"
+            <Button Text="Đặt Hàng"
                     Grid.Row="3"
                     TextColor="White"
+                    FontSize="18"
+                    BackgroundColor="#EB7910" Padding="25,0,25,0"
                     Command="{Binding PlaceOrdersCommand}"
                     HorizontalOptions="Center"
                     CornerRadius="20"></Button>
-            
-            
         </Grid>
        
     </ContentPage.Content>

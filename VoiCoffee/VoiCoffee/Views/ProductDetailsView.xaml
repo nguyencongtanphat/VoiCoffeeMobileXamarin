@@ -15,33 +15,37 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-
-            <Image Grid.Row="0" Source="{Binding SelectedFoodItem.ImageUrl}"
-                   Aspect="AspectFit" VerticalOptions="Start"/>
-            <Label Grid.Row="1" Text="{Binding SelectedFoodItem.Name}" TextColor="White"
-                   FontAttributes="Bold" FontSize="35" Margin="25,-85,0,0"/>
-            <ImageButton Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.ArrowLeft}, Size=30, Color=White}"
-                    Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
+            <pancake:PancakeView CornerRadius="15" Grid.Row="0" Margin="20">
+                <Image Source="{Binding SelectedFoodItem.ImageUrl}"
+                   Aspect="AspectFill" VerticalOptions="Start" HeightRequest="310"/>
+            </pancake:PancakeView>
+            
+            <!--<Label Grid.Row="1" Text="{Binding SelectedFoodItem.Name}" TextColor="White"
+                   FontAttributes="Bold" FontSize="35" Margin="25,-85,0,0"/>-->
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
 
             <StackLayout Grid.Row="2" Spacing="10" Padding="10" VerticalOptions="Start">
-                <StackLayout Orientation="Horizontal" Spacing="10">
+                <!--<StackLayout Orientation="Horizontal" Spacing="10">
                     <Label Text="Product ID: " FontSize="Subtitle"/>
                     <Label Text="{Binding SelectedFoodItem.ProductID}" FontSize="Subtitle" TextColor="Purple"/>
+                </StackLayout>-->
+
+                <StackLayout Orientation="Horizontal" Spacing="10" Margin="10,0,10,0">
+                    <!--<Label Text="Product Name: " FontSize="Subtitle"/>-->
+                    <Label Text="{Binding SelectedFoodItem.Name}" FontSize="20" FontAttributes="Bold" TextColor="#026D4D"/>
+                    <Label Text="{Binding SelectedFoodItem.Price, StringFormat='{0} vnđ'}" FontSize="20" TextColor="#2B3641" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label Text="Product Name: " FontSize="Subtitle"/>
-                    <Label Text="{Binding SelectedFoodItem.Name}" FontSize="Subtitle" TextColor="Purple"/>
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="10,0,10,0">
+                    <Label Text="Mô tả: " FontSize="17" TextColor="#026D4D"/>
+                    <Label Text="{Binding SelectedFoodItem.HomeSelected}" FontSize="15" TextColor="#808080"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label Text="Description: " FontSize="Subtitle"/>
-                    <Label Text="{Binding SelectedFoodItem.Description}" FontSize="Subtitle" TextColor="Purple"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label Text="Rating: " FontSize="Subtitle"/>
-                    <Label Text="{Binding SelectedFoodItem.Rating}" FontSize="Subtitle" TextColor="Purple"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" Margin="10,0,10,0">
+                    <Label Text="Đánh giá: " FontSize="17" TextColor="#026D4D"/>
+                    <Label Text="{Binding SelectedFoodItem.Rating}" FontSize="17" TextColor="#2B3641"/>
+                    <Image Source="https://i.imgur.com/arSHePi.png" HorizontalOptions="Start" WidthRequest="20"/>
                 </StackLayout>
             </StackLayout>
 
@@ -52,32 +56,30 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Text="-" FontSize="30" TextColor="White"
-                        BackgroundColor="Purple" Grid.Column="0" HorizontalOptions="End"
+                <Button Text="-" FontSize="20" TextColor="White"
+                        BackgroundColor="#026D4D" Grid.Column="0" HorizontalOptions="End"
                         Command="{Binding DecrementOrderCommand}"/>
 
                 <Entry Text="{Binding TotalQuantity}"
-                       HorizontalTextAlignment="Center" FontSize="30" Grid.Column="1"/>
+                       HorizontalTextAlignment="Center" FontSize="20" Grid.Column="1" TextColor="#2B3641"/>
 
-                <Button Text="+" FontSize="30" TextColor="White"
-                        BackgroundColor="Purple" Grid.Column="2" HorizontalOptions="Start"
+                <Button Text="+" FontSize="20" TextColor="White"
+                        BackgroundColor="#026D4D" Grid.Column="2" HorizontalOptions="Start"
                         Command="{Binding IncrementOrderCommand}"/>
             </Grid>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="4">
-                <pancake:PancakeView CornerRadius="0,20,60,0" HorizontalOptions="Center">
-                    <Button Text="Add to Cart" BackgroundColor="LimeGreen" WidthRequest="200"
-                            HorizontalOptions="Center" Command="{Binding AddToCartCommand}" HeightRequest="50"></Button>
-                </pancake:PancakeView>
-
-                <pancake:PancakeView CornerRadius="0,20,60,0" HorizontalOptions="Center">
-                    <Button Text="View Cart" BackgroundColor="Orange" WidthRequest="200"
-                            HorizontalOptions="Center" Command="{Binding ViewCartCommand}" HeightRequest="50"></Button>
-                </pancake:PancakeView>
+            <StackLayout Orientation="Horizontal" Grid.Row="4" Margin="20">
+                <Button Text="Thêm Vào Giỏ" BackgroundColor="#026D4D" WidthRequest="160" CornerRadius="15"
+                    HorizontalOptions="Center" Command="{Binding AddToCartCommand}" HeightRequest="50" TextColor="White" Padding="30,0,30,0"></Button>
+              
+                
+                <Button Text="Xem Giỏ Hàng" CornerRadius="15" BackgroundColor="Transparent" WidthRequest="160" BorderColor="#026D4D" BorderWidth="2"
+                    Command="{Binding ViewCartCommand}" HeightRequest="50" TextColor="#026D4D" Padding="30,0,30,0" HorizontalOptions="EndAndExpand"></Button>
+               
             </StackLayout>
 
             <pancake:PancakeView Grid.Row="6" CornerRadius="60,60,0,0">
-                <Button Text="Go To Home" BackgroundColor="SkyBlue" HeightRequest="50" Command="{Binding HomeCommand}"/>
+                <Button Text="Về Trang Chủ" BackgroundColor="#FFF2DD" TextColor="#EB7910" HeightRequest="50" Command="{Binding HomeCommand}"/>
             </pancake:PancakeView> 
         </Grid>
     </ContentPage.Content>

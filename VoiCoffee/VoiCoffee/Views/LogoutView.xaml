@@ -9,7 +9,7 @@
     xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
     ios:Page.UseSafeArea="True"
     Visual="Material"
-    BackgroundColor="LimeGreen">
+    BackgroundColor="#026D4D">
     <ContentPage.BindingContext>
         <vm:LogoutViewModel/>
     </ContentPage.BindingContext>
@@ -19,30 +19,28 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ImageButton Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.ArrowLeft},
-                Size=30, Color=White}"
-                         Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit"
-                         VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
 
-            <Label Text="Voi Coffee" FontSize="40" TextColor="WhiteSmoke" FontFamily="CabinSketch"
-                   HorizontalOptions="Center" VerticalOptions="Start"/>
+            <Label Text="The Lagom Coffee" FontSize="24" TextColor="WhiteSmoke" FontFamily="CabinSketch" FontAttributes="Bold"
+                   HorizontalOptions="Center" VerticalOptions="Start" Margin="0,30,0,0"/>
 
-            <Label x:Name="LabelName" FontSize="Subtitle" Margin="20,0" TextColor="WhiteSmoke"
+            <Label x:Name="LabelName" FontSize="15" Margin="0,0,0,5" TextColor="WhiteSmoke"
                    HorizontalOptions="Center" VerticalOptions="End"/>
 
             <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60,60,0,0" Grid.Row="1">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <StackLayout IsVisible="{Binding IsCartExists}">
-                        <Label Text="Cart, in not empty!"/>
-                        <Label Text="{Binding UserCartItemsCount, StringFormat='Your Cart Contains {0} Items'}"/>
+                        <Label Text="Còn Sản Phẩm Trong Giỏ Hàng!" FontAttributes="Bold" TextColor="#2B3641"/>
+                        <Label Text="{Binding UserCartItemsCount, StringFormat='Giỏ hàng của bạn còn {0} sản phẩm chưa xác nhận.'}" TextColor="#2B3641"/>
                     </StackLayout>
 
                     <StackLayout>
-                        <Label Text="Are you sure you wanted to logout?"/>
+                        <Label Text="Bạn có chắc chắn muốn đăng xuất?" TextColor="#2B3641"/>
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Button Text="Yes, Logout" HorizontalOptions="Center" BackgroundColor="Red" CornerRadius="20"
+                            <Button Text="Có, Đăng Xuất" HorizontalOptions="Center" BackgroundColor="#D00000" CornerRadius="20" Padding="20,0,20,0" Margin="0,0,10,0" TextColor="White"
                                     Command="{Binding LogoutCommand}"/>
-                            <Button Text="No, Go To Cart" HorizontalOptions="Center" BackgroundColor="LightGreen" CornerRadius="20"
+                            <Button Text="Không, Quay Lại Giỏ Hàng" HorizontalOptions="Center" BackgroundColor="#026D4D" CornerRadius="20" Padding="20,0,20,0" TextColor="White"
                                     Command="{Binding GotoCartCommand}"/>
                         </StackLayout>
                     </StackLayout>

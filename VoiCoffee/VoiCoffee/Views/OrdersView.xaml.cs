@@ -15,7 +15,7 @@ namespace VoiCoffee.Views
         public OrdersView(string id)
         {
             InitializeComponent();
-            LabelName.Text = "Welcome " + Preferences.Get("Username", "Guest") + ",";
+            LabelName.Text = "Đặt hàng thành công " + Preferences.Get("Username", "Guest") + ",";
             LabelOrderID.Text = id;
         }
 

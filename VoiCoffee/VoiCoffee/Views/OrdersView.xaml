@@ -7,7 +7,7 @@
              ios:Page.UseSafeArea="True"
              x:Class="VoiCoffee.Views.OrdersView"
              Visual="Material"
-             BackgroundColor="LimeGreen">
+             BackgroundColor="#026D4D">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -15,24 +15,22 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <ImageButton Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.ArrowLeft},
-                Size=30, Color=White}"
-                         Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit"
-                         VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
 
-            <Label Text="Voi Coffee" FontSize="40" TextColor="WhiteSmoke" FontFamily="CabinSketch"
-                   HorizontalOptions="Center" VerticalOptions="Start"/>
+            <Label Text="The Lagom Coffee" FontSize="24" TextColor="WhiteSmoke" FontFamily="CabinSketch" FontAttributes="Bold"
+                   HorizontalOptions="Center" VerticalOptions="Start" Margin="0,30,0,0"/>
 
-            <Label x:Name="LabelName" FontSize="Subtitle" Margin="20,0" TextColor="WhiteSmoke"
+            <Label x:Name="LabelName" FontSize="15" Margin="0,0,0,5" TextColor="WhiteSmoke"
                    HorizontalOptions="Center" VerticalOptions="End"/>
 
             <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60,60,0,0" Grid.Row="1">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label Text="Thanks for placing an order with us."/>
-                    <Label Text="Please note down your Order ID for further Tracking"/>
-                    <Label x:Name="LabelOrderID" TextColor="Purple" FontSize="Subtitle"/>
+                    <Label Text="Cảm ơn bạn đã chọn The Lagom Coffee!" FontAttributes="Bold" Margin="20,0,20,0" TextColor="#2B3641"/>
+                    <Label Text="Vui lòng lưu lại mã đơn hàng bên dưới để tiện theo dõi:" Margin="20,0,20,0" TextColor="#2B3641"/>
+                    <Label x:Name="LabelOrderID" TextColor="#EB7910" FontSize="16" Margin="20,0,20,10" FontAttributes="Bold"/>
 
-                    <Button Text="View All Products" WidthRequest="200" BackgroundColor="Purple"
+                    <Button Text="Quay Về Trang Chủ" WidthRequest="200" BackgroundColor="#026D4D" TextColor="White" Padding="20,0,20,0"
                             HorizontalOptions="Center" CornerRadius="20" Clicked="Button_Clicked"/>
                 </StackLayout>
             </pancake:PancakeView>

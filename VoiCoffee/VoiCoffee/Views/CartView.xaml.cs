@@ -10,7 +10,7 @@ namespace VoiCoffee.Views
         public CartView()
         {
             InitializeComponent();
-            LabelName.Text = "Welcome " + Preferences.Get("Username", "Guest") + ",";
+            LabelName.Text = "Giỏ hàng của " + Preferences.Get("Username", "Guest") + ",";
         }
 
         private async void ImageButton_Clicked(object sender, EventArgs e)

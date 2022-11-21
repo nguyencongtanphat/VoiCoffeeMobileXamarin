@@ -82,7 +82,7 @@
                                                    Grid.Column="1"
                                                    Grid.ColumnSpan="2"
                                                    Text="{Binding Name}"
-                                                   FontSize="18"
+                                                   FontSize="17"
                                                    FontAttributes="Bold"
                                                    TextColor="#2B3641"></Label>
                                             <Label Grid.Row="1"
