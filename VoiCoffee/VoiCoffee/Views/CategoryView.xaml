@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:helpers="clr-namespace:DemoApp.Helpers"
+             xmlns:helpers="clr-namespace:VoiCoffee.Helpers"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:pancake1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="VoiCoffee.Views.CategoryView">
@@ -15,17 +15,17 @@
             </Grid.RowDefinitions>
 
 
-            <!--<Image Grid.Row="0"
-                   Source="{Binding SelectedCategory.CategoryPoster}"  Aspect="AspectFit" VerticalOptions="Start"/>-->
-
             <Image Grid.Row="0"
+                   Source="{Binding SelectedCategory.CategoryPoster}"  Aspect="AspectFill" VerticalOptions="Start" HeightRequest="300"/>
+
+            <!--<Image Grid.Row="0"
                    Source="https://www.aspicyperspective.com/wp-content/uploads/2020/07/best-hamburger-patties-1.jpg"
                    Aspect="AspectFit"
-                   VerticalOptions="Start" />
+                   VerticalOptions="Start" />-->
             
             <Label Grid.Row="1"
-                   Text="{Binding SelectedCategory.CategoryName}" TextColor="White" FontSize="35" FontAttributes="Bold" Margin="25,-85,0,0"></Label>
-            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" WidthRequest="50" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"></ImageButton>
+                   Text="{Binding SelectedCategory.CategoryName}" TextColor="White" FontSize="30" FontAttributes="Bold" Margin="25,-75,0,0"></Label>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"></ImageButton>
             
             <!--phần hiển thị sản phẩm-->
             <pancake1:PancakeView Grid.Row ="2">
@@ -42,7 +42,7 @@
                     <!--tổng số sản phẩm-->
                     <Label Grid.Row="0"
                            Grid.Column="0"
-                           Text="{Binding TotalFoodItems, StringFormat='{0} Total Items'}"
+                           Text="{Binding TotalFoodItems, StringFormat='{0} Sản Phẩm'}"
                            FontAttributes="Bold" FontSize="18"></Label>
                     
                     <!--ảnh chi tiết-->
@@ -82,32 +82,32 @@
                                                    Grid.Column="1"
                                                    Grid.ColumnSpan="2"
                                                    Text="{Binding Name}"
-                                                   FontSize="15"
-                                                   FontAttributes="Bold"></Label>
+                                                   FontSize="18"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#2B3641"></Label>
                                             <Label Grid.Row="1"
                                                    Grid.Column="1"
                                                    Grid.ColumnSpan="2"
                                                    Text="{Binding Description}"
                                                    FontSize="15"
-                                                   TextColor="#a4a7b6"></Label>
+                                                   TextColor="#808080"></Label>
                                             <Image Grid.Row="2"
                                                    Grid.Column="1"
-                                                   Source="Star"
+                                                   Source="https://i.imgur.com/arSHePi.png"
                                                    HorizontalOptions="Start"
                                                    WidthRequest="20"></Image>
 
 
                                             <Label Grid.Row="2"
                                                    Grid.Column="1"
-                                                   Margin="30,0,0,0"
+                                                   Margin="28,0,0,0"
                                                    FontSize="15"
                                                    VerticalOptions="Center">
                                                 <Label.FormattedText>
                                                     <FormattedString>
-                                                        <Span Text="{Binding Rating}"
-                                                              FontAttributes="Bold" />
-                                                        <Span Text="{Binding RatingDetail}"
-                                                              TextColor="#a4a7b6" />
+                                                        <Span Text="{Binding Rating}" FontAttributes="Bold" TextColor="#2B3641"/>
+                                                        <Span Text="   " FontAttributes="Bold"/>
+                                                        <Span Text="{Binding RatingDetail}" TextColor="#808080"/>
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>

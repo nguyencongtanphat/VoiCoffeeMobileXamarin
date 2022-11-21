@@ -18,6 +18,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -36,23 +37,23 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Welcome" Grid.Row="0" Grid.Column="0" TextColor="Silver"/>
+                <Label Text="Chào buổi sáng," Grid.Row="0" Grid.Column="0" TextColor="#808080"/>
 
-                <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold" TextColor="#026D4D"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
+                <!--<ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
                     Glyph={x:Static helpers:IconFont.ViewList}, Size=40, Color=Purple}" Margin="0,0,10,0"
-                             HorizontalOptions="End"/>
+                             HorizontalOptions="End"/>-->
 
-                <Label Text="{Binding UserCartItemsCount}" FontSize="Subtitle" Grid.Row="0"
+                <Label Text="{Binding UserCartItemsCount}" FontSize="20" Grid.Row="0"
                        Grid.Column="2" Grid.RowSpan="2" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
 
                 <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
-                             Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.Shopping},Size=40, Color=Green}" Margin="0,0,10,0"
+                             Source="https://i.imgur.com/uFifmnk.png" Margin="0,0,10,0" WidthRequest="30"
                              HorizontalOptions="End" Command="{Binding ViewCartCommand}"/>
 
                 <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2"
-                             Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.Logout},Size=40, Color=Red}" Margin="0,0,10,0"
+                             Source="https://i.imgur.com/jdAHouu.png" Margin="0,0,10,0" WidthRequest="30"
                              HorizontalOptions="End" Command="{Binding LogoutCommand}"/>
 
             </Grid>
@@ -64,33 +65,34 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <!--thanh search-->
-                <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
-                <ImageButton Grid.Column="1" Source="{FontImage FontFamily=FontAwesome,
-                        Glyph={x:Static helpers:IconFont.SearchWeb}, Size=40, Color=Black}" Margin="0,0,10,0" HorizontalOptions="End"/>
+                <SearchBar Grid.Column="0" Placeholder="Tìm địa chỉ cửa hàng" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
+                <ImageButton Grid.Column="1" Source="https://i.imgur.com/o3vc2rv.png" Margin="0,0,10,0" HorizontalOptions="End" WidthRequest="35"/>
             </Grid>
+            <Label Grid.Row="2" Text="Danh mục sản phẩm" FontSize="25" FontAttributes="Bold" Margin="0,20,0,0" TextColor="#026D4D"/>
+
             <!--danh mục sp-->
             <CollectionView ItemsSource="{Binding Categories}"
-                            Margin="0,20" 
+                            Margin="0,15,0,15" 
                             HeightRequest="125"
                             VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" ItemsLayout="HorizontalList" SelectionChanged="CollectionView_SelectionChanged"
-                            SelectionMode="Single" Grid.Row="2">
+                            SelectionMode="Single" Grid.Row="3">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="0,0,15,0">
-                            <Frame HeightRequest="50" HasShadow="False" BackgroundColor="#feeee8" CornerRadius="10">
+                            <Frame HeightRequest="50" HasShadow="False" BackgroundColor="#FFF2DD" CornerRadius="10">
                                 <Image Source="{Binding ImageUrl}"/>
                             </Frame>
-                            <Label Text="{Binding CategoryName}" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding CategoryName}" TextColor="#2B3641" HorizontalTextAlignment="Center"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
             <!--latest items-->
-            <Label Grid.Row="3" Text="Latest Items" FontSize="25" FontAttributes="Bold"/>
+            <Label Grid.Row="4" Text="Sản phẩm mới ra mắt" FontSize="25" FontAttributes="Bold" TextColor="#026D4D"/>
 
             <CollectionView ItemsSource="{Binding LatestItems}" Margin="0,20,10,0" VerticalOptions="Start"
-                            VerticalScrollBarVisibility="Never" Grid.Row="4">
+                            VerticalScrollBarVisibility="Never" Grid.Row="5">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Margin="0,15">
@@ -102,21 +104,22 @@
                                 </Grid.RowDefinitions>
 
                                 <pancake:PancakeView Grid.Row="0" CornerRadius="20" Margin="0,0,10,0">
-                                    <Image Source="{Binding ImageUrl}" Aspect="Fill" HeightRequest="220"/>
+                                    <Image Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="220"/>
                                 </pancake:PancakeView>
                                 <Frame Grid.Row="1" Margin="20,-80,20,70" BackgroundColor="White" CornerRadius="15"
                                        HorizontalOptions="End">
-                                    <Label Text="{Binding Price, StringFormat='{0:c'}" FontSize="Medium"
-                                           FontAttributes="Bold" TextColor="Black" HeightRequest="10"/>
+                                    <Label Text="{Binding Price, StringFormat='{0} vnđ'}" FontSize="Medium"
+                                           FontAttributes="Bold" TextColor="#EB7910" HeightRequest="10"/>
                                 </Frame>
-                                <Label Grid.Row="1" Text="{Binding Name}" FontSize="22" FontAttributes="Bold"
+                                <Label Grid.Row="1" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" TextColor="#2B3641"
                                        VerticalTextAlignment="Center"/>
-                                <Image Grid.Row="2" Source="https://img.freepik.com/free-vector/start_53876-25533.jpg" HorizontalOptions="Start" WidthRequest="20"/>
-                                <Label Grid.Row="2" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
+                                <Image Grid.Row="2" Source="https://i.imgur.com/arSHePi.png" HorizontalOptions="Start" WidthRequest="20"/>
+                                <Label Grid.Row="2" Margin="28,0,0,0" FontSize="15" VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span Text="{Binding Rating}" FontAttributes="Bold"/>
-                                            <Span Text="{Binding Description}" TextColor="#a4a7b6"/>
+                                            <Span Text="{Binding Rating}" FontAttributes="Bold" TextColor="#2B3641"/>
+                                            <Span Text="   " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Description}" TextColor="#808080"/>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
