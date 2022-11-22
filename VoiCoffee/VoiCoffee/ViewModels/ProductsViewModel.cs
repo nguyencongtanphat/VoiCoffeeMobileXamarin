@@ -59,6 +59,7 @@ namespace VoiCoffee.ViewModels
 
         public Command ViewCartCommand { get; set; }
         public Command LogoutCommand { get; set; }
+        public Command MapCommand { get; set; }
 
         public ProductsViewModel()
         {
@@ -75,6 +76,7 @@ namespace VoiCoffee.ViewModels
 
             ViewCartCommand = new Command(async () => await ViewCartAsync());
             LogoutCommand = new Command(async () => await LogoutAsync());
+            MapCommand = new Command(async () => await MapAsync());
 
             GetCategories();
             GetLatestItems();
@@ -88,6 +90,11 @@ namespace VoiCoffee.ViewModels
         private async Task LogoutAsync()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new LogoutView());
+        }
+
+        private async Task MapAsync()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new MapPage());
         }
 
         private async void GetCategories()

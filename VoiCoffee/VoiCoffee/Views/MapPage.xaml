@@ -4,13 +4,36 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="VoiCoffee.Views.MapPage">
-    <Grid>
-        <map:Map MapType="Street" HasZoomEnabled="True">
-            <map:Map.ItemTemplate>
-                <DataTemplate>
-                    <map:Pin Position="{Binding Position}" Address="{Binding Address}" Label="{Binding PlaceName}"/>
-                </DataTemplate>
-            </map:Map.ItemTemplate>
-        </map:Map>
-    </Grid>
+       <map:Map x:Name="map"
+               IsShowingUser="True"
+               MoveToLastRegionOnLayoutChange="False" HasZoomEnabled="True">
+         <x:Arguments>
+             <map:MapSpan>
+                 <x:Arguments>
+                     <map:Position>
+                         <x:Arguments>
+                             <x:Double>10.874336</x:Double>
+                             <x:Double>106.801167</x:Double>
+                         </x:Arguments>
+                     </map:Position>
+                     <x:Double>0.01</x:Double>
+                     <x:Double>0.01</x:Double>
+                 </x:Arguments>
+             </map:MapSpan>
+         </x:Arguments>
+         <map:Map.Pins>
+             <map:Pin Label="The Lagom Coffee"
+                       Address="Đ. Quảng Trường Sáng Tạo, Đông Hoà, Dĩ An, Bình Dương"
+                       Type="Place">
+                 <map:Pin.Position>
+                     <map:Position>
+                         <x:Arguments>
+                             <x:Double>10.874336</x:Double>
+                             <x:Double>106.801167</x:Double>
+                         </x:Arguments>
+                     </map:Position>
+                 </map:Pin.Position>
+             </map:Pin>
+         </map:Map.Pins>
+     </map:Map>
 </ContentPage>

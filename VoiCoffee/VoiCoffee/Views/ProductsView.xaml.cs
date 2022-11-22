@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Linq;
 using VoiCoffee.Model;
 
 namespace VoiCoffee.Views

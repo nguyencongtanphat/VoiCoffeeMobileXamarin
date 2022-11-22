@@ -66,7 +66,7 @@
                 </Grid.ColumnDefinitions>
                 <!--thanh search-->
                 <SearchBar Grid.Column="0" Placeholder="Tìm địa chỉ cửa hàng" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
-                <ImageButton Grid.Column="1" Source="https://i.imgur.com/o3vc2rv.png" Margin="0,0,10,0" HorizontalOptions="End" WidthRequest="35"/>
+                <ImageButton Grid.Column="1" Source="https://i.imgur.com/rm5wqPY.png" Margin="0,0,10,0" HorizontalOptions="End" WidthRequest="35" Command="{Binding MapCommand}"/>
             </Grid>
             <Label Grid.Row="2" Text="Danh mục sản phẩm" FontSize="25" FontAttributes="Bold" Margin="0,20,0,0" TextColor="#026D4D"/>
 
