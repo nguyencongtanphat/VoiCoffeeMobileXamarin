@@ -4,6 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="VoiCoffee.Views.MapPage">
+    <StackLayout>
+       <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
        <map:Map x:Name="map"
                IsShowingUser="True"
                MoveToLastRegionOnLayoutChange="False" HasZoomEnabled="True">
@@ -36,4 +39,5 @@
              </map:Pin>
          </map:Map.Pins>
      </map:Map>
+    </StackLayout>
 </ContentPage>
