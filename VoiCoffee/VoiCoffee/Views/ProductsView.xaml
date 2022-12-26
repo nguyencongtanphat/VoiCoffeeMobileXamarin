@@ -41,9 +41,9 @@
 
                 <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold" TextColor="#026D4D"/>
 
-                <!--<ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
-                    Glyph={x:Static helpers:IconFont.ViewList}, Size=40, Color=Purple}" Margin="0,0,10,0"
-                             HorizontalOptions="End"/>-->
+                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="https://i.imgur.com/6YRRoK2.png"
+                             Margin="0,0,10,0" WidthRequest="30" Command="{Binding HistoryCommand}"
+                             HorizontalOptions="End"/>
 
                 <Label Text="{Binding UserCartItemsCount}" FontSize="20" Grid.Row="0"
                        Grid.Column="2" Grid.RowSpan="2" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>

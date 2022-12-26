@@ -26,6 +26,7 @@
 
             <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60,60,0,0" Grid.Row="1">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="https://cdn.dribbble.com/users/1751799/screenshots/5512482/check02.gif"/>
                     <Label Text="Cảm ơn bạn đã chọn The Lagom Coffee!" FontAttributes="Bold" Margin="20,0,20,0" TextColor="#2B3641"/>
                     <Label Text="Vui lòng lưu lại mã đơn hàng bên dưới để tiện theo dõi:" Margin="20,0,20,0" TextColor="#2B3641"/>
                     <Label x:Name="LabelOrderID" TextColor="#EB7910" FontSize="16" Margin="20,0,20,10" FontAttributes="Bold"/>

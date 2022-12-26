@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VoiCoffee.Views.BranchView">
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="18" FontAttributes="Bold">Chi nhánh</Label>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="18" FontAttributes="Bold" Margin="0,0,0,20">The Lagom Coffee</Label>
+            <ListView x:Name="LstBranch" SeparatorColor="#988E8E"
+                      RowHeight="100" ItemTapped="LstBranch_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Img}" WidthRequest="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
+                                <Label Text="The Lagom Coffee" Grid.Column="1" Grid.Row="0" FontSize="15" FontAttributes="Bold" TextColor="#EB7910"/>
+                                <Label Text="{Binding Province}" Grid.Column="1" Grid.Row="1" FontSize="12" TextColor="#2B3641"/>
+                                <Label  Text="{Binding Address, StringFormat='Địa chỉ: {0}'}" Grid.Column="1" Grid.Row="2" FontSize="12" TextColor="#2B3641" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

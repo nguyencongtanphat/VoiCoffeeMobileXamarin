@@ -6,7 +6,8 @@
     x:Class="VoiCoffee.Views.MapPage">
     <StackLayout>
        <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
-                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"
+                    BackgroundColor="Transparent"/>
        <map:Map x:Name="map"
                IsShowingUser="True"
                MoveToLastRegionOnLayoutChange="False" HasZoomEnabled="True">
@@ -24,20 +25,6 @@
                  </x:Arguments>
              </map:MapSpan>
          </x:Arguments>
-         <map:Map.Pins>
-             <map:Pin Label="The Lagom Coffee"
-                       Address="Đ. Quảng Trường Sáng Tạo, Đông Hoà, Dĩ An, Bình Dương"
-                       Type="Place">
-                 <map:Pin.Position>
-                     <map:Position>
-                         <x:Arguments>
-                             <x:Double>10.874336</x:Double>
-                             <x:Double>106.801167</x:Double>
-                         </x:Arguments>
-                     </map:Position>
-                 </map:Pin.Position>
-             </map:Pin>
-         </map:Map.Pins>
      </map:Map>
     </StackLayout>
 </ContentPage>

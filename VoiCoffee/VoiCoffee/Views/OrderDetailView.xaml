@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="VoiCoffee.Views.OrderDetailView">
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="18" FontAttributes="Bold" Margin="0,0,0,0">Chi tiết đơn hàng</Label>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#EB7910" FontSize="18" FontAttributes="Bold" Margin="0,0,0,20">3781ad5fa514</Label>
+            <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60, 60, 0, 0">
+                <ListView x:Name="ListOrderDetails"
+                          Margin="20"
+                          SeparatorVisibility="None"
+                          BackgroundColor="WhiteSmoke"
+                          ItemsSource="{Binding CartItems}" Header="" HasUnevenRows="True">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Mã"
+                                       Grid.Column="0"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Tên"
+                                       Grid.Column="1"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Giá"
+                                       Grid.Column="2"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Số lượng"
+                                       Grid.Column="3"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Thành tiền"
+                                       Grid.Column="4"
+                                       FontSize="14"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding ProductId}"
+                                               Grid.Column="0"
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="{Binding ProductName}"
+                                               Grid.Column="1"
+                                               FontSize="14"
+                                               TextColor="#808080"></Label>
+                                        <Label Text="{Binding Price}"
+                                               Grid.Column="2"
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="{Binding Quantity}"
+                                               Grid.Column="3"
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="{Binding Cost}"
+                                               Grid.Column="4"
+                                               FontSize="14"
+                                               TextColor="#808080"
+                                               HorizontalTextAlignment="Center"></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </pancake:PancakeView>
+
+            <!--<Label Text="{Binding TotalCost, StringFormat='Tổng tiền: {0:c}'}"
+                   HorizontalTextAlignment="End"
+                   FontSize="20" FontAttributes="Bold"
+                   TextColor="#026D4D"
+                   Margin="0,15,15,15"/>-->
+
+            <Label x:Name="totalCost"
+                   HorizontalTextAlignment="End"
+                   FontSize="20" FontAttributes="Bold"
+                   TextColor="#026D4D"
+                   Margin="0,15,15,35"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
