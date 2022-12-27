@@ -42,7 +42,7 @@ namespace VoiCoffee.ViewModels
             var id = await new OrderService().PlaceOrderAsync() as string;
             RemoveItemsFromCart();
 
-            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersView(id));
+            await Application.Current.MainPage.Navigation.PushModalAsync(new PaymentView(id));
         }
 
         private void RemoveItemsFromCart()

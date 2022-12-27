@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VoiCoffee.Views.BlogDetailView">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>
+            <Image x:Name="BigImg" HeightRequest="220" Aspect="AspectFill"/>
+            <Label x:Name="Title" FontAttributes="Bold" FontSize="22" TextColor="#026D4D" Margin="20"/>
+            <Label x:Name="Con1" Margin="20,0,20,10" TextColor="#2B3641" FontSize="16"/>
+            <Label x:Name="Sub1" Margin="20,0,20,10" TextColor="#EB7910" FontAttributes="Bold" FontSize="17"/>
+            <Label x:Name="Con2" Margin="20,0,20,10" TextColor="#2B3641" FontSize="16"/>
+            <Image x:Name="SmallImg1" WidthRequest="250" Margin="20,0,20,10" />
+            <Label x:Name="Con3" Margin="20,0,20,10"  TextColor="#2B3641" FontSize="16"/>
+            <Label x:Name="Sub2" Margin="20,0,20,10"  TextColor="#EB7910" FontAttributes="Bold" FontSize="17"/>
+            <Label x:Name="Con4" Margin="20,0,20,10" TextColor="#2B3641" FontSize="16"/>
+            <Image x:Name="SmallImg2" WidthRequest="250" Margin="20,0,20,10" />
+            <Label x:Name="Con5" Margin="20,0,20,10" TextColor="#2B3641" FontSize="16"/>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

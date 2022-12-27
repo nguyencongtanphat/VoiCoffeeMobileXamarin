@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoiCoffee.Views.PaymentView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="18" FontAttributes="Bold" Margin="0,0,0,0">Phương thức thanh toán</Label>
+
+            <Grid Margin="20,20,20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Text="Chọn ngân hàng"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,0"
+                       TextColor="#026D4D" />
+                <!--1danh mục ngân hàng-->
+                <CollectionView x:Name="bankCollectionView"
+                                Margin="0,5,0,10"
+                                HeightRequest="125"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalScrollBarVisibility="Never"
+                                ItemsLayout="HorizontalList"
+                                SelectionMode="Single"
+                                Grid.Row="1">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="7,5,7,5">
+                                <Frame HeightRequest="50"
+                                       WidthRequest="50"
+                                       HasShadow="False"
+                                       BackgroundColor="#FFF2DD"
+                                       CornerRadius="10">
+                                    <Image Source="{Binding bankImage}"/>
+                                </Frame>
+                                <Label Text="{Binding bankName}"
+                                       TextColor="#2B3641"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!--2thông tin ngân hàng-->
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Text="Thông tin ngân hàng"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0"
+                           TextColor="#026D4D" />
+                    <!--tên tài khoản-->
+                    <Label Text="Tên tài khoản"
+                           Grid.Row="1" TextColor="#2B3641" FontSize="14"></Label>
+                    <Entry  Placeholder="Nhập tên tài khoản"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            PlaceholderColor="#988E8E"></Entry>
+
+                    <!--số tài khoản-->
+                    <Label Text="Số tài khoản" TextColor="#2B3641" FontSize="14"
+                           Grid.Row="3"></Label>
+                    <Entry  Placeholder="Nhập số tài khoản"
+                            Grid.Row="4"
+                            Grid.ColumnSpan="2"
+                            PlaceholderColor="#988E8E"></Entry>
+
+                    <!--ngày tạo-->
+                    <Label Text="Ngày tạo" TextColor="#2B3641" FontSize="14"
+                           Grid.Row="5"></Label>
+                    <DatePicker Grid.Row="6"
+                                MinimumDate="01/01/2016"
+                                MaximumDate="12/31/2022"
+                                Date="06/21/2018" />
+                    <!--cvv-->
+                    <Label Text="CVV" TextColor="#2B3641" FontSize="14"
+                           Grid.Row="5"
+                           Grid.Column="1"></Label>
+                    <Entry  Placeholder="Nhập số CVV"
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            PlaceholderColor="#988E8E"></Entry>
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Text="Phương thức thanh toán khác"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           Margin="0,20,0,0"
+                           TextColor="#026D4D" />
+                    <Button Text="MoMo" Clicked="Button_Clicked" Margin="0,10,0,0"
+                            WidthRequest="300"
+                            Grid.Row="1"
+                            TextColor="White"
+                            FontSize="18"
+                            BackgroundColor="#A70064"
+                            HorizontalOptions="Center"
+                            CornerRadius="20" FontAttributes="Bold"></Button>
+                    <Button Text="ZaloPay" Clicked="Button_Clicked"
+                            WidthRequest="300"
+                            Grid.Row="2"
+                            TextColor="White"
+                            FontSize="18"
+                            BackgroundColor="#03C373"
+                            HorizontalOptions="Center"
+                            CornerRadius="20" FontAttributes="Bold"></Button>
+                    <Button Text="Tiền mặt" Clicked="Button_Clicked"
+                            WidthRequest="300"
+                            Grid.Row="3"
+                            TextColor="White"
+                            FontSize="18"
+                            BackgroundColor="#A97E57"
+                            HorizontalOptions="Center"
+                            CornerRadius="20" FontAttributes="Bold"></Button>
+                </Grid>
+                <BoxView   Grid.Row="4"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="1"
+                           WidthRequest="300"
+                           Color="#5b5d68" Margin="0,20,0,0"></BoxView>
+                <Button Text="Xác nhận" Clicked="Button_Clicked"
+                        Grid.Row="5"
+                        TextColor="White"
+                        FontSize="18"
+                        BackgroundColor="#026D4D"
+                        HorizontalOptions="Center"
+                        CornerRadius="20" Padding="30,5,30,5" FontAttributes="Bold"></Button>
+            </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,7 +11,10 @@
         <vm:ProductsViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
+        <ScrollView>
+                <StackLayout>
         <Grid Margin="20,0,0,0">
+
             <!--định nghĩa dòng, cột-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -59,6 +62,9 @@
             </Grid>
 
             <!--nội dung-->
+            
+
+                
             <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -71,6 +77,7 @@
             <Label Grid.Row="2" Text="Danh mục sản phẩm" FontSize="25" FontAttributes="Bold" Margin="0,20,0,0" TextColor="#026D4D"/>
 
             <!--danh mục sp-->
+            
             <CollectionView ItemsSource="{Binding Categories}"
                             Margin="0,15,0,15" 
                             HeightRequest="125"
@@ -128,7 +135,42 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
+            
         </Grid>
+            <Label Text="Combo CloudTea" Margin="20,0,0,0" FontSize="25" FontAttributes="Bold" TextColor="#026D4D"/>
+            <Image Source="https://file.hstatic.net/1000075078/file/cloudtea_1_5dc49fd17ba04030993d2f797dc570f2.png"/>
+            <Image Source="https://file.hstatic.net/1000075078/file/cloudtea_tagline_1_c39d8fd0d46b4144be9cebd05e318796.png"/>
+            <Label FontSize="14"  Margin="20,0,20,0" HorizontalTextAlignment="Center" TextColor="#808080">Vừa êm mượt dịu dàng, vừa bùng nổ nồng nàn, BST Trà Sữa CloudTea Hương Vị Nụ Hôn Đầu mang đến trải nghiệm đầy mới mẻ. Chạm môi là foam béo mịn bồng bềnh, càng thêm đậm đà nhờ topping vụn bánh quy phô mai hoặc bột ca cao thơm lừng.</Label>
+          
+            <Button Text="Thử ngay" 
+                        Grid.Row="5"
+                        TextColor="White"
+                        FontSize="18"
+                        BackgroundColor="#BCDDCD"
+                        HorizontalOptions="Center"
+                        CornerRadius="10" Padding="60,5,60,5" FontAttributes="Bold" Margin="0,10,0,0" Clicked="Button_Clicked"></Button>
+
+            <Label Text="Tin tức" Margin="20,20,0,0" FontSize="25" FontAttributes="Bold" TextColor="#026D4D"/>
+            <pancake:PancakeView CornerRadius="20"  Margin="20,10,20,0">
+                    <ImageButton Clicked="ImageButton_Clicked_2" Source="https://file.hstatic.net/1000075078/file/_downloader.la_-61dfea3c26b86_4bc7e52295174fd3bd9bf0cfd72dc410_grande.jpg" Aspect="AspectFill" HeightRequest="120"/>
+            </pancake:PancakeView>
+            <Label Text="Văn hoá thưởng thức cà phê của người châu Á" TextColor="#2B3641" FontSize="16" FontAttributes="Bold" Margin="20,0,20,0"/>
+            <Label Text="Văn hoá cà phê sẽ phụ thuộc vào những yếu tố liên quan đến “hình thái và phong cách” của làn sóng cà phê mà quốc gia đó chịu ảnh hưởng..." TextColor="#808080" FontSize="14" Margin="20,0,20,0"/>
+
+            <pancake:PancakeView CornerRadius="20" Margin="20,20,20,0" >
+                    <ImageButton Clicked="ImageButton_Clicked" Source="https://product.hstatic.net/1000075078/product/1637231136_original1-lifestyle-1_102a89f6e77742099ba8930c3716b0c2.jpg" Aspect="AspectFill" HeightRequest="120"/>
+            </pancake:PancakeView>
+            <Label Text="Cà phê đậm đà cho ngày dài năng lượng" TextColor="#2B3641" FontSize="16" FontAttributes="Bold" Margin="20,0,20,0"/>
+            <Label Text="Cà phê là thức uống chiếm giữ vị trí số 1 trong lòng của rất rất nhiều người để mỗi ngày thêm cảm hứng, mỗi ngày thêm năng lượng..." TextColor="#808080" FontSize="14" Margin="20,0,20,0"/>
+
+            
+            <pancake:PancakeView CornerRadius="20" Margin="20,20,20,0">
+                    <ImageButton Clicked="ImageButton_Clicked_1" Source="https://hrv.hstatic.net/s_1000266602/_KV-marvel-2.jpg" Aspect="AspectFill" HeightRequest="120"/>
+            </pancake:PancakeView>
+            <Label Text="Cách pha cà phê phin thơm tròn ngon tròn vị" TextColor="#2B3641" FontSize="16" FontAttributes="Bold" Margin="20,0,20,0"/>
+            <Label Text="Có nhiều cách để pha một ly cà phê ngon, nhưng đối với nhiều người Việt giây phút đợi chờ những giọt cà phê rơi từ chiếc phin..." TextColor="#808080" FontSize="14" Margin="20,0,20,0"/>   
+            
+        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

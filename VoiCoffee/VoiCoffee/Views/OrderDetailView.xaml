@@ -2,13 +2,17 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Class="VoiCoffee.Views.OrderDetailView">
+    x:Class="VoiCoffee.Views.OrderDetailView"
+    xmlns:vm="clr-namespace:VoiCoffee.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:OrderDetailsViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
                     WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>
             <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="18" FontAttributes="Bold" Margin="0,0,0,0">Chi tiết đơn hàng</Label>
-            <Label HorizontalOptions="CenterAndExpand" TextColor="#EB7910" FontSize="18" FontAttributes="Bold" Margin="0,0,0,20">3781ad5fa514</Label>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#EB7910" FontSize="18" FontAttributes="Bold" Margin="0,0,0,20" x:Name="Idd"></Label>
             <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60, 60, 0, 0">
                 <ListView x:Name="ListOrderDetails"
                           Margin="20"
