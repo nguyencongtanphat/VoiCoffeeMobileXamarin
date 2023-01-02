@@ -81,6 +81,7 @@
                            Grid.Row="1" TextColor="#2B3641" FontSize="14"></Label>
                     <Entry  Placeholder="Nhập tên tài khoản"
                             Grid.Row="2"
+                            x:Name="hoten"
                             Grid.ColumnSpan="2"
                             PlaceholderColor="#988E8E"></Entry>
 

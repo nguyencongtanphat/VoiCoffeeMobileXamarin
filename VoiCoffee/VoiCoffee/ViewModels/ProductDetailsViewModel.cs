@@ -66,7 +66,7 @@ namespace VoiCoffee.ViewModels
 
         private async Task GotoHomeAsync()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new TabbarView());
         }
 
         private void AddToCart()

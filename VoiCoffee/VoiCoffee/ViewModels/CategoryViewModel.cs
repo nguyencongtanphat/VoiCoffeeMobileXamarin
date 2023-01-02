@@ -44,6 +44,12 @@ namespace VoiCoffee.ViewModels
             GetFoodItems(category.CategoryID);
         }
 
+        public CategoryViewModel()
+        {
+            FoodItemsByCategory = new ObservableCollection<FoodItem>();
+            GetFoodItems();
+        }
+
         private async void GetFoodItems(int categoryID)
         {
             var data = await new FoodItemService().GetFoodItemsByCategoryAsync(categoryID);
@@ -52,6 +58,17 @@ namespace VoiCoffee.ViewModels
             {
                 FoodItemsByCategory.Add(item);
                 
+            }
+            TotalFoodItems = FoodItemsByCategory.Count;
+        }
+
+        private async void GetFoodItems()
+        {
+            var data = await new FoodItemService().GetFoodItemsAsync();
+            FoodItemsByCategory.Clear();
+            foreach (var item in data)
+            {
+                FoodItemsByCategory.Add(item);
             }
             TotalFoodItems = FoodItemsByCategory.Count;
         }

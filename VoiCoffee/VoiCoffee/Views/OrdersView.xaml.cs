@@ -15,8 +15,11 @@ namespace VoiCoffee.Views
         public OrdersView(string id)
         {
             InitializeComponent();
-            LabelName.Text = "Đặt hàng thành công " + Preferences.Get("Username", "Guest") + ",";
+            LabelName.Text = "Đặt hàng thành công!";
             LabelOrderID.Text = id;
+            Hoten.Text =  "Họ tên:             " +  Preferences.Get("Fullname", "Guest");
+            SDT.Text =    "Số điện thoại:  " + Preferences.Get("Phonenumber", "Guest");
+            Diachi.Text = "Địa chỉ:             " + Preferences.Get("Address", "Guest");
         }
 
         async void ImageButton_Clicked(System.Object sender, System.EventArgs e)

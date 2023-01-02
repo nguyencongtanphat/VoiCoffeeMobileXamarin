@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VoiCoffee.Views.TabbarView"
+    xmlns:local1="clr-namespace:VoiCoffee.Views"
+    Title="The Lagom Coffee">
+    
+    <Shell.FlyoutHeader>
+        <local1:ProductsView></local1:ProductsView>
+    </Shell.FlyoutHeader>
+
+    <ShellItem Route="login">
+        <ShellContent ContentTemplate="{DataTemplate local1:LoginView}"></ShellContent>
+    </ShellItem>
+
+    <TabBar  Shell.TabBarTitleColor="#026D4D" Shell.TabBarUnselectedColor="#808080" Title="The Lagom Coffee" FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="True" Route="main">
+        <Tab Icon="https://i.imgur.com/m8bVSfa.png" Title="Trang chủ">
+            <ShellContent ContentTemplate="{DataTemplate local1:ProductsView}"></ShellContent>
+        </Tab>
+        <Tab Icon="https://i.imgur.com/HcuoDuf.png" Title="Thức uống">
+            <ShellContent ContentTemplate="{DataTemplate local1:AllProductsView}"></ShellContent>
+        </Tab>
+        <Tab Icon="https://i.imgur.com/pFNWlxp.png" Title="Đơn hàng">
+            <ShellContent ContentTemplate="{DataTemplate local1:HistoryPage}"></ShellContent>
+        </Tab>
+        <Tab Icon="https://i.imgur.com/VsnxheS.png" Title="Chi nhánh" >
+            <ShellContent ContentTemplate="{DataTemplate local1:BranchView}"></ShellContent>
+        </Tab>
+        <Tab Icon="https://i.imgur.com/0EeuPIk.png" Title="Cài đặt" >
+            <ShellContent ContentTemplate="{DataTemplate local1:UserInfoView}"></ShellContent>
+        </Tab>
+        <!--<Tab Icon="https://i.imgur.com/m8mZLHD.png" Title="Thông tin cá nhân" FlyoutItemIsVisible="False">
+            <ShellContent ContentTemplate="{DataTemplate local1:ProductsView}"></ShellContent>
+        </Tab>
+        <Tab Icon="https://i.imgur.com/m8mZLHD.png" Title="Đăng xuâ" FlyoutItemIsVisible="False">
+            <ShellContent ContentTemplate="{DataTemplate local1:ProductsView}"></ShellContent>
+        </Tab>-->
+        
+    </TabBar>
+</Shell>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoiCoffee.Views.AllProductsView"
+             xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
+             xmlns:helpers="clr-namespace:VoiCoffee.Helpers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             ios:Page.UseSafeArea="True">
+    <ContentPage.BindingContext>
+        <vm:ProductsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+                <StackLayout Margin="20,0,0,0">
+        
+            <Label HorizontalOptions="CenterAndExpand"  Text="Danh mục sản phẩm" FontSize="25" FontAttributes="Bold" Margin="0,20,20,0" TextColor="#026D4D"/>
+
+            <!--danh mục sp-->
+            
+            <CollectionView ItemsSource="{Binding Categories}"
+                            Margin="0,15,0,15" 
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            SelectionMode="Single" Grid.Row="3">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="5" HorizontalItemSpacing="5"></GridItemsLayout>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="0,0,15,0">
+                            <Frame HasShadow="False" BackgroundColor="#FFF2DD" CornerRadius="10">
+                                <Image Source="{Binding ImageUrl}"/>
+                            </Frame>
+                            <Label Text="{Binding CategoryName}" TextColor="#2B3641" Margin="0,0,0,20" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+ 
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

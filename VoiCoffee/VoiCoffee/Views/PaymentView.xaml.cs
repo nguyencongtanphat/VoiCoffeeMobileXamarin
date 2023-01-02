@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoiCoffee.Model;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +19,8 @@ namespace VoiCoffee.Views
         {
             InitializeComponent();
             bankList = new List<Banker>();
+
+            hoten.Text = Preferences.Get("Fullname", "Guest");
 
             bankList.Add(new Banker
             {

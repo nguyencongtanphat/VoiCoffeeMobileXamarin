@@ -62,6 +62,9 @@ namespace VoiCoffee.ViewModels
             var cis = new CartItemService();
             cis.RemoveItemsFromCart();
             Preferences.Remove("Username");
+            Preferences.Remove("Fullname");
+            Preferences.Remove("Address");
+            Preferences.Remove("Phonenumber");
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginView());
         }
     }

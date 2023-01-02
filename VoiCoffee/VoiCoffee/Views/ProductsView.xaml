@@ -44,20 +44,20 @@
 
                 <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold" TextColor="#026D4D"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="https://i.imgur.com/6YRRoK2.png"
+                <!--<ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="https://i.imgur.com/6YRRoK2.png"
                              Margin="0,0,10,0" WidthRequest="30" Command="{Binding HistoryCommand}"
-                             HorizontalOptions="End"/>
+                             HorizontalOptions="End"/>-->
 
-                <Label Text="{Binding UserCartItemsCount}" FontSize="20" Grid.Row="0"
-                       Grid.Column="2" Grid.RowSpan="2" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
+                <Label Text="{Binding UserCartItemsCount}" FontSize="15" Grid.Row="0" TextColor="#2B3641" Margin="0,5,20,0"
+                       Grid.Column="3" Grid.RowSpan="2" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
-                             Source="https://i.imgur.com/uFifmnk.png" Margin="0,0,10,0" WidthRequest="30"
+                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" 
+                             Source="https://i.imgur.com/ZRemVig.png" Margin="0,0,20,0" WidthRequest="30"
                              HorizontalOptions="End" Command="{Binding ViewCartCommand}"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2"
+                <!--<ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2"
                              Source="https://i.imgur.com/jdAHouu.png" Margin="0,0,10,0" WidthRequest="30"
-                             HorizontalOptions="End" Command="{Binding LogoutCommand}"/>
+                             HorizontalOptions="End" Command="{Binding LogoutCommand}"/>-->
 
             </Grid>
 
@@ -66,13 +66,16 @@
 
                 
             <Grid Grid.Row="1" Grid.Column="0">
-                <Grid.ColumnDefinitions>
+                <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <!--thanh search-->
+                thanh search
                 <SearchBar Grid.Column="0" Placeholder="Tìm địa chỉ cửa hàng" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
-                <ImageButton Grid.Column="1" Source="https://i.imgur.com/rm5wqPY.png" Margin="0,0,10,0" HorizontalOptions="End" WidthRequest="35" Command="{Binding MapCommand}"/>
+                <ImageButton Grid.Column="1" Source="https://i.imgur.com/rm5wqPY.png" Margin="0,0,10,0" HorizontalOptions="End" WidthRequest="35" Command="{Binding MapCommand}"/>-->
+                <pancake:PancakeView CornerRadius="20" Margin="0,0,20,20">
+                    <ImageButton Clicked="Button_Clicked" Source="https://lh4.googleusercontent.com/UZgE0B71R_DnOq2sUM2f-Fu6MXcVRpV30R7z6Lnxjz2BQXdyx-_zYGrbRwKs4JuF2fhVONq_Z-0WiSexEvGKN59YKB__AMOjojgYJ0j9JzKTwf0PCJrN7M3ggg0cmM-MZOFtmXpPYST6_odftmjb1JXAOHE-b2B9nJrIWpv7587Sqn4xly9iY_tiszn34w" Aspect="AspectFill" HeightRequest="200"/>
+            </pancake:PancakeView>
             </Grid>
             <Label Grid.Row="2" Text="Danh mục sản phẩm" FontSize="25" FontAttributes="Bold" Margin="0,20,0,0" TextColor="#026D4D"/>
 
@@ -165,7 +168,7 @@
 
             
             <pancake:PancakeView CornerRadius="20" Margin="20,20,20,0">
-                    <ImageButton Clicked="ImageButton_Clicked_1" Source="https://hrv.hstatic.net/s_1000266602/_KV-marvel-2.jpg" Aspect="AspectFill" HeightRequest="120"/>
+                    <ImageButton Clicked="ImageButton_Clicked_1" Source="https://cdn.huongnghiepaau.com/wp-content/uploads/2019/01/dung-cu-chemex.jpg" Aspect="AspectFill" HeightRequest="120"/>
             </pancake:PancakeView>
             <Label Text="Cách pha cà phê phin thơm tròn ngon tròn vị" TextColor="#2B3641" FontSize="16" FontAttributes="Bold" Margin="20,0,20,0"/>
             <Label Text="Có nhiều cách để pha một ly cà phê ngon, nhưng đối với nhiều người Việt giây phút đợi chờ những giọt cà phê rơi từ chiếc phin..." TextColor="#808080" FontSize="14" Margin="20,0,20,0"/>   

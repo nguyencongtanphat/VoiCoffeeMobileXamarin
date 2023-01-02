@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
+             x:Class="VoiCoffee.Views.SignupView"
+             Visual="Material">
+    <ContentPage.BindingContext>
+        <vm:SignupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="10"
+                     VerticalOptions="Center"
+                     Padding="16">
+            <Label Text="ĐĂNG KÝ"
+                       FontFamily="CabinSketch"
+                       TextColor="#026D4D"
+                       FontAttributes="Bold"
+                       FontSize="25"
+                       HorizontalOptions="Center"></Label>
+            <Entry Placeholder="Nhập họ và tên" Text="{Binding Fullname}"></Entry>
+            <Entry Placeholder="Nhập username" Text="{Binding Username}"></Entry>
+            <Entry Placeholder="Nhâp mật khẩu"
+                   IsPassword="True" Text="{Binding Password}"></Entry>
+            <Entry Placeholder="Nhập địa chỉ" Text="{Binding Address}"></Entry>
+            <Entry Placeholder="Nhập số điện thoại" Text="{Binding Number}"></Entry>
+
+
+            <Button Text="ĐĂNG KÝ"
+                    Command="{Binding RegisterCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#026D4D"
+                    TextColor="White"
+                    WidthRequest="200"
+                    HeightRequest="60"
+                    ></Button> 
+            <Label Text="Bạn đã có tài khoản?" TextColor="#808080" HorizontalOptions="Center"></Label>
+
+            <Button Text="ĐĂNG NHẬP"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="#026D4D"
+                    BorderColor="Transparent"
+                    BorderWidth="5"
+                    WidthRequest="200"
+                    HeightRequest="60"
+                    Command="{Binding LoginCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

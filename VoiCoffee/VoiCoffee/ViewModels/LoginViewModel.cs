@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using VoiCoffee.Model;
 using VoiCoffee.Services;
 using VoiCoffee.Views;
 using Xamarin.Essentials;
@@ -105,31 +106,7 @@ namespace VoiCoffee.ViewModels
 
         private async Task RegisterCommandAsync()
         {
-            if (IsBusy)
-                return;
-            try
-            {
-                IsBusy = true;
-                var userService = new UserService();
-                Result = await userService.RegisterUser(Username, Password);
-                if (Result == 0)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Thành Công", "Bạn Đã Đăng Ký Thành Công!", "OK");
-                }
-                else if (Result ==1)
-                    await Application.Current.MainPage.DisplayAlert("Lỗi", "Tài Khoản Này Đã Tồn Tại!", "OK");
-                else if (Result == 2)
-                    await Application.Current.MainPage.DisplayAlert("Lỗi", "Vui Lòng Nhập Đầy Đủ Thông Tin!", "OK");
-
-            }
-            catch (Exception ex)
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            await Application.Current.MainPage.Navigation.PushModalAsync(new SignupView());
         }
 
         private async Task LoginCommandAsync()
@@ -143,8 +120,14 @@ namespace VoiCoffee.ViewModels
                 Result1 = await userService.LoginUser(Username, Password);
                 if (Result1)
                 {
-                    Preferences.Set("Username", Username);
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
+                    User userInfo = await userService.getUserInfo(Username);
+                    Preferences.Set("Username", userInfo.Username);
+                    Preferences.Set("Fullname", userInfo.Fullname);
+                    Preferences.Set("Address", userInfo.Address);
+                    Preferences.Set("Phonenumber", userInfo.Phonenumber);
+                    await Shell.Current.GoToAsync(state: "//main");
+    
+
                 }
                 else
                     await Application.Current.MainPage.DisplayAlert("Lỗi", "Tài Khoản hoặc Mật Khẩu Chưa Đúng!", "OK");

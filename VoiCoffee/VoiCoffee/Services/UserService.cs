@@ -26,20 +26,36 @@ namespace VoiCoffee.Services
             return (user != null);
         }
 
-        public async Task<int> RegisterUser(string uname, string passwd)
+        public async Task<int> RegisterUser(string Fullname, string Username, string Password, string Address, string Number)
         {
-            if (uname==null || passwd==null) return 2;
-            if (await IsUserExists(uname) == false)
+            if (Fullname == null || Username == null || Password == null || Address == null || Number == null) return 2;
+            if (await IsUserExists(Username) == false)
             {
                 await client.Child("Users")
                     .PostAsync(new User()
                     {
-                        Username = uname,
-                        Password = passwd
+                        Fullname = Fullname,
+                        Username = Username,
+                        Password = Password,
+                        Address = Address,
+                        Phonenumber = Number
                     });
                 return 0;
             }
             return 1;
+        }
+
+        public async Task<User> getUserInfo(string uname)
+        {
+            var user = (await client.Child("Users").OnceAsync<User>()).Where(u => u.Object.Username == uname).FirstOrDefault();
+            return new User
+            {
+                Fullname = user.Object.Fullname,
+                Username = user.Object.Username,
+                Password = user.Object.Password,
+                Address = user.Object.Address,
+                Phonenumber = user.Object.Phonenumber,
+            };
         }
 
         public async Task<bool> LoginUser(string uname, string passwd)

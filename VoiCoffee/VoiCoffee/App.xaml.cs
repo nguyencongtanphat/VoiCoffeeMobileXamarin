@@ -23,7 +23,7 @@ namespace VoiCoffee
             }
             else
             {
-                MainPage = new ProductsView();
+                MainPage = new TabbarView();
             }
 
             //MainPage = new MapPage();

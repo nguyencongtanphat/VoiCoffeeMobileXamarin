@@ -21,15 +21,28 @@
             <Label Text="The Lagom Coffee" FontSize="24" TextColor="WhiteSmoke" FontFamily="CabinSketch" FontAttributes="Bold"
                    HorizontalOptions="Center" VerticalOptions="Start" Margin="0,30,0,0"/>
 
+            
             <Label x:Name="LabelName" FontSize="15" Margin="0,0,0,5" TextColor="WhiteSmoke"
                    HorizontalOptions="Center" VerticalOptions="End"/>
 
             <pancake:PancakeView BackgroundColor="WhiteSmoke" CornerRadius="60,60,0,0" Grid.Row="1">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                    <Image Source="https://cdn.dribbble.com/users/1751799/screenshots/5512482/check02.gif"/>
-                    <Label Text="Cảm ơn bạn đã chọn The Lagom Coffee!" FontAttributes="Bold" Margin="20,0,20,0" TextColor="#2B3641"/>
-                    <Label Text="Vui lòng lưu lại mã đơn hàng bên dưới để tiện theo dõi:" Margin="20,0,20,0" TextColor="#2B3641"/>
-                    <Label x:Name="LabelOrderID" TextColor="#EB7910" FontSize="16" Margin="20,0,20,10" FontAttributes="Bold"/>
+                    <Label  FontSize="17" Margin="20,0,0,5" TextColor="#026D4D" Text="Thông tin nhận hàng"
+                   HorizontalOptions="Start" VerticalOptions="End" FontAttributes="Bold"/>
+
+                    <Label x:Name="Hoten" FontSize="15" Margin="40,0,0,5" TextColor="#2B3641"
+                   HorizontalOptions="Start" VerticalOptions="End"/>
+
+                    <Label x:Name="SDT" FontSize="15" Margin="40,0,0,5" TextColor="#2B3641"
+                   HorizontalOptions="Start" VerticalOptions="End"/>
+
+                        <Label x:Name="Diachi" FontSize="15" Margin="40,0,0,5" TextColor="#2B3641"
+                   HorizontalOptions="Start" VerticalOptions="End"/>
+
+                    <Image Source="https://i.imgur.com/wSHyc96.png" WidthRequest="200"/>
+                    <Label Text="Cảm ơn bạn đã chọn The Lagom Coffee!" FontAttributes="Bold" Margin="20,10,20,0" TextColor="#026D4D" FontSize="17"/>
+                    <Label Text="Vui lòng lưu lại mã đơn hàng bên dưới để tiện theo dõi:" Margin="40,0,20,0" TextColor="#2B3641" FontSize="15"/>
+                    <Label x:Name="LabelOrderID" TextColor="#EB7910" FontSize="15" Margin="40,0,20,10" FontAttributes="Bold"/>
 
                     <Button Text="Quay Về Trang Chủ" WidthRequest="200" BackgroundColor="#026D4D" TextColor="White" Padding="20,0,20,0"
                             HorizontalOptions="Center" CornerRadius="20" Clicked="Button_Clicked"/>
