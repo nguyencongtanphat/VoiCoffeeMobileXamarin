@@ -32,23 +32,28 @@ namespace VoiCoffee.Views
 
         private async void update_btn_Clicked(object sender, EventArgs e)
         {
-            User user = new User
-            {
-                Username = "ABC",
-                Fullname = "ABCD",
-                Phonenumber = "2904920490",
-                Password = "123445",
-                Address = "FSAKFKJSDAK"
+            //User user = new User
+            //{
+            //    Username = "ABC",
+            //    Fullname = "ABCD",
+            //    Phonenumber = "2904920490",
+            //    Password = "123445",
+            //    Address = "FSAKFKJSDAK"
 
 
-            };
+            //};
             //await client.Child("Users").Child("-NKhnV_PzQnMPzgde1QC").PutAsync(JsonConvert.SerializeObject(user));
-            DisplayAlert("Thông tin user", "update thành công", "close");
+            //DisplayAlert("Thông tin user", "update thành công", "close");
+            await Navigation.PushModalAsync(new UpdateUserView());
         }
 
         private async void logout_btn_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new LogoutView());
+        }
+
+        void ListView_Refreshing(System.Object sender, System.EventArgs e)
+        {
         }
     }
 }

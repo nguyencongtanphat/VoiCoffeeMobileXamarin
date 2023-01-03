@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using VoiCoffee.Model;
 using Firebase.Database.Query;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using Newtonsoft.Json;
 
 namespace VoiCoffee.Services
 {
@@ -62,6 +64,24 @@ namespace VoiCoffee.Services
         {
             var user = (await client.Child("Users").OnceAsync<User>()).Where(u => u.Object.Username == uname).Where(u => u.Object.Password == passwd).FirstOrDefault();
             return (user != null);
+        }
+
+        public async void updateUser(User userInfo)
+        {
+            string uname = Preferences.Get("Username", String.Empty);
+            var user = (await client.Child("Users").OnceAsync<User>()).Where(u => u.Object.Username == uname).FirstOrDefault();
+            string id = user.Key;
+            //await Application.Current.MainPage.DisplayAlert("Thông báo", id, "OK");
+
+            await client.Child("Users").Child(id).PutAsync(JsonConvert.SerializeObject(userInfo));
+
+
+            Preferences.Set("Username", userInfo.Username);
+            Preferences.Set("Fullname", userInfo.Fullname);
+            Preferences.Set("Address", userInfo.Address);
+            Preferences.Set("Phonenumber", userInfo.Phonenumber);
+            Preferences.Set("Password", userInfo.Password);
+
         }
     }
 }

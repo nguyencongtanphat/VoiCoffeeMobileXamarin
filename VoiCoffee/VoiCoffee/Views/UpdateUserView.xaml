@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:VoiCoffee.ViewModels"
+             x:Class="VoiCoffee.Views.UpdateUserView">
+    <ContentPage.BindingContext>
+        <vm:UpdateUserViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
+                    WidthRequest="40" Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30" Clicked="ImageButton_Clicked"/>
+            <StackLayout Spacing="10"
+                     Padding="16">
+            <Label Text="Chỉnh sửa thông tin"
+                       FontFamily="CabinSketch"
+                       TextColor="#026D4D"
+                       FontAttributes="Bold"
+                       FontSize="25" Margin="0,25,0,0"
+                       HorizontalOptions="Center"></Label>
+            <!--fullname-->
+            <Label TextColor="#026D4D" Text="Họ và tên"></Label>
+            <Entry   Placeholder="Nhập họ và tên mới"
+                     Text="{Binding Fullname}"></Entry>
+            
+            <!--username-->
+            <Label TextColor="#026D4D" Text="Tên người dùng"></Label>
+            <Entry   Placeholder="Nhập tên người dùng mới"
+                     Text="{Binding Username}"></Entry>
+            
+            <!--password-->
+            <Label TextColor="#026D4D" Text="Mật khẩu"></Label>
+            <Entry   Placeholder="Nhập mật khẩu mới"
+                     Text="{Binding Password}"></Entry>
+            
+            <!--address-->
+            <Label  TextColor="#026D4D" Text="Địa chỉ"></Label>
+            <Entry  Text="{Binding Address}"
+                    Placeholder="Nhập địa chỉ mới"></Entry>
+            
+            <!--phone-->
+            <Label  TextColor="#026D4D" Text="Số điện thoại"></Label>
+            <Entry  Placeholder="Nhập số điện thoại mới"
+                    Text="{Binding Number}"></Entry>
+        
+            <!--<Button Text="Chỉnh sửa"
+                    Command="{Binding UpdateCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="#026D4D"
+                    BorderColor="#026D4D"
+                    BorderWidth="5"
+                    WidthRequest="200"
+                    HeightRequest="60"
+                    CornerRadius="20"></Button>-->
+
+            <Button Text="Chỉnh sửa"
+                    Command="{Binding UpdateCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#026D4D"
+                    TextColor="White"
+                    WidthRequest="200"
+                    HeightRequest="60"
+                    ></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

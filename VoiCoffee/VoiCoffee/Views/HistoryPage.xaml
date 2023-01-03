@@ -11,8 +11,8 @@
         <StackLayout>
             <!--<ImageButton Source="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png"
                     WidthRequest="40" HorizontalOptions="Start" Aspect="AspectFill" VerticalOptions="Start" Margin="10,30,10,0" Clicked="ImageButton_Clicked"/>-->
-            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="25" FontAttributes="Bold" Margin="0,20,0,0">Lịch sử đơn hàng</Label>
-            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="25" FontAttributes="Bold" Margin="0,0,0,20" Text="{Binding UserName}"></Label>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="25" FontAttributes="Bold" Margin="0,20,0,20">Lịch sử đơn hàng</Label>
+            <!--<Label HorizontalOptions="CenterAndExpand" TextColor="#026D4D" FontSize="25" FontAttributes="Bold" Margin="0,0,0,20" Text="{Binding UserName}"></Label>-->
             <ListView ItemsSource="{Binding ordersList}" SeparatorColor="#988E8E"
                       RowHeight="100" ItemTapped="abc_ItemTapped" x:Name="abc">
                 <ListView.ItemTemplate>
